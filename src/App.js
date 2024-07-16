@@ -5,18 +5,21 @@ const App = () => {
   const [boxes, setBoxes] = useState(Array(9).fill(null));
   const [clickOrder, setClickOrder] = useState([]);
 
+  
   const handleClick = (index) => {
-    if (!boxes[index]) {
-      const newBoxes = [...boxes];
+    if (!boxes[index]) { // checks if the box at the given index is clicked or not.
+      // create and update a new array of boxes and is set to green.
+      const newBoxes = [...boxes]; 
       newBoxes[index] = 'green';
       setBoxes(newBoxes);
-      setClickOrder([...clickOrder, index]);
+      setClickOrder([...clickOrder, index]); // Update the state with the new click order including the current index.
 
-      if (clickOrder.length === 8) {
+      if (clickOrder.length === 8) { // If this is the ninth click (all boxes have been clicked)
         setTimeout(() => {
           let newBoxes = Array(9).fill(null);
           const newClickOrder = [...clickOrder, index];
           newClickOrder.forEach((idx, order) => {
+            // Delay each box color change by 500ms multiplied by its order
             setTimeout(() => {
               newBoxes[idx] = 'orange';
               setBoxes([...newBoxes]);

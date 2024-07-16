@@ -4,7 +4,6 @@ import './App.css';
 const App = () => {
   const [boxes, setBoxes] = useState(Array(9).fill(null));
   const [clickOrder, setClickOrder] = useState([]);
-  const [finalClick, setFinalClick] = useState(false);
 
   const handleClick = (index) => {
     if (!boxes[index]) {
@@ -14,19 +13,15 @@ const App = () => {
       setClickOrder([...clickOrder, index]);
 
       if (clickOrder.length === 8) {
-        setFinalClick(true);
         setTimeout(() => {
           let newBoxes = Array(9).fill(null);
-          clickOrder.forEach((idx, order) => {
+          const newClickOrder = [...clickOrder, index];
+          newClickOrder.forEach((idx, order) => {
             setTimeout(() => {
               newBoxes[idx] = 'orange';
               setBoxes([...newBoxes]);
-            }, order * 300); 
+            }, order * 500); // 500ms delay between each box change
           });
-          setTimeout(() => {
-            newBoxes[8] = 'orange';
-            setBoxes([...newBoxes]);
-          }, clickOrder.length * 300);
         }, 500);
       }
     }
@@ -47,6 +42,6 @@ const App = () => {
       </div>
     </div>
   );
-
 };
+
 export default App;

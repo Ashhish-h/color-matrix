@@ -21,12 +21,12 @@ const App = () => {
             setTimeout(() => {
               newBoxes[idx] = 'orange';
               setBoxes([...newBoxes]);
-            }, order * 400); 
+            }, order * 300); 
           });
           setTimeout(() => {
             newBoxes[8] = 'orange';
             setBoxes([...newBoxes]);
-          }, clickOrder.length * 400);
+          }, clickOrder.length * 300);
         }, 500);
       }
     }

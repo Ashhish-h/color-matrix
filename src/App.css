@@ -5,6 +5,7 @@ html, body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: #f0f0f0; 
 }
 
 .App {
@@ -53,6 +54,10 @@ h1 {
   grid-template-columns: repeat(3, 100px);
   grid-template-rows: repeat(3, 100px);
   gap: 5px;
+  background-color: white; 
+  padding: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 5px; 
 }
 
 .box {

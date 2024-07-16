@@ -33,15 +33,18 @@ const App = () => {
   };
 
   return (
-    <div className="matrix">
-      {boxes.map((color, index) => (
-        <div 
-        key = {index}
-        className = "box"
-        style = {{ backgroundColor: color || 'white'}}
-        onClick = { () => handleClick(index)}
-        ></div>
-      ))}
+    <div className="container">
+      <h1>Color Changing Matrix</h1>
+      <div className="matrix">
+        {boxes.map((color, index) => (
+          <div
+            key={index}
+            className="box"
+            style={{ backgroundColor: color || 'white' }}
+            onClick={() => handleClick(index)}
+          ></div>
+        ))}
+      </div>
     </div>
   );
 

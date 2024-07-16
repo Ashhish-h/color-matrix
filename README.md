@@ -2,6 +2,8 @@
 
 This project is a simple React application that implements a 3x3 matrix of boxes. The application changes the color of each box when clicked. When the last (ninth) box is clicked, all boxes turn orange in the sequence of their original clicks.
 
+Hosted link - https://color-changing-matrix.netlify.app/
+
 ## Features
 
 - **Color Change on Click**: Clicking on any box changes its color to green.
@@ -38,3 +40,4 @@ File Structure
 ## Acknowledgements
 
     Created with Create React App.
+    Hosted on netlify.

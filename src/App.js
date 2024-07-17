@@ -11,19 +11,18 @@ const App = () => {
       // create and update a new array of boxes and is set to green.
       const newBoxes = [...boxes]; 
       newBoxes[index] = 'green';
-      setBoxes(newBoxes);
+      setBoxes(newBoxes); // update the state with new boxes array
       setClickOrder([...clickOrder, index]); // Update the state with the new click order including the current index.
 
       if (clickOrder.length === 8) { // If this is the ninth click (all boxes have been clicked)
-        setTimeout(() => {
-          let newBoxes = Array(9).fill(null);
-          const newClickOrder = [...clickOrder, index];
-          newClickOrder.forEach((idx, order) => {
-            // Delay each box color change by 500ms multiplied by its order
-            setTimeout(() => {
+        setTimeout(() => { // delay the start of the color change sequence
+          let newBoxes = Array(9).fill(null);  // initialize a new array to store color boxes
+          const newClickOrder = [...clickOrder, index]; 
+          newClickOrder.forEach((idx, order) => { //iterate over the newCLickOrder and set color of each box to orange
+            setTimeout(() => {  // 500ms delay between each box change
               newBoxes[idx] = 'orange';
               setBoxes([...newBoxes]);
-            }, order * 500); // 500ms delay between each box change
+            }, order * 500); 
           });
         }, 500);
       }

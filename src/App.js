@@ -32,13 +32,16 @@ const App = () => {
   return (
     <div className="container">
       <h1>Color Changing Matrix</h1>
+      {/* Grid container for the 3x3 matrix */}
       <div className="matrix">
+      {/* Map through the boxes array to create each box */}
         {boxes.map((color, index) => (
+          // Each box is a div with dynamic styles and an onClick handler
           <div
             key={index}
             className="box"
             style={{ backgroundColor: color || 'white' }}
-            onClick={() => handleClick(index)}
+            onClick={() => handleClick(index)} // click handler to change color
           ></div>
         ))}
       </div>
